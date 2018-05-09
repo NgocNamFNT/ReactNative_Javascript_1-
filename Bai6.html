@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		 function CountWords (tk, tu,kitu) {
+
+        if (tu == null) {
+            tu = true;
+        }
+        if (kitu == null) {
+            kitu = false;
+        }
+        var count = tk.value.length;
+        var Str = tk.value + " ";
+        var whitespace = /^[^A-Za-z0-9]+/gi;
+        var trimmedStr = Str.replace(whitespace, "");
+        var number = rExp = /[^A-Za-z0-9]+/gi;
+        var cleanedStr = trimmedStr.replace(number, " ");
+        var splitString = cleanedStr.split(" ");
+        var word_count = splitString.length -1;
+        if (Str.length <2) {
+            word_count = 0;
+        }
+        if (word_count == 1) {
+            wordOrWords = " word";
+        }
+        else {
+            wordOrWords = " words";
+        }
+        if (count == 1) {
+            charOrChars = " character";
+        } 
+        else {
+            charOrChars = " characters";
+        }
+        if (tu & kitu) {
+            alert ("Word Count:\n" + "    " + word_count + wordOrWords + "\n" + "    " + count + charOrChars);
+        }
+        else {
+            if (tu) {
+                alert ("Word Count:  " + word_count + wordOrWords);
+            }
+            else {
+                if (kitu) {
+                    alert ("Character Count:  " + count + charOrChars);
+              }
+           }
+        }
+        return word_count;
+    }
+	</script>
+</head>
+<body>
+	<form>
+			<textarea cols=40 rows=5 name=x>
+			</textarea>
+			<br>
+			<input type=button value="Count Words" OnClick ="CountWords(this.form.x, true, true);">
+	</form>	
+	
+</body>
+</html>

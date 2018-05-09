@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	function SapXep(){
+	    var so=document.getElementById("so").value;
+	    if(so==""){
+	        document.getElementById("loi").innerHTML="Mời bạn nhập vào dãy số";
+	    }
+	    else{
+	        document.getElementById("loi").innerHTML="";
+	    }
+	    var mang=so.split(' ');
+	    for(var i=0; i<mang.length;i++){
+	        var sap=mang.sort();
+	        document.getElementById("tang").innerHTML=sap.toString();
+	    }
+	}
+	</script>
+</head>
+<body>
+		<h2>Bài tập số 2</h2>
+		<label>Nhập vào dãy số</label><br>
+		<input type="text" id="so"></input>
+	    <button type="button" onclick="SapXep()" return false;>Sắp</button>
+		<label id="tang"></label>
+		<p id="loi"></p>
+</body>
+</html>

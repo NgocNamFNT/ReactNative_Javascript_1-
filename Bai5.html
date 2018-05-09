@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	function DemTu() {
+	    var chuoi = document.getElementById("chuoi").value.toString();
+	    var dem = 0;
+	    for (var i = 0; i < chuoi.length; i++) {
+	        while(chuoi[i] === ' ' && i < chuoi.length) {
+	            i++;
+	        }
+	        dem ++;
+	        while (chuoi[i] !== ' ' && i < chuoi.length){
+	            i++ ; 
+	        }
+	    }
+    	document.getElementById("tang").innerHTML =dem.toString() +"Từ";
+	}
+	</script>
+</head>
+<body>
+		<label>Nhập vào chuỗi</label><br>
+		<input type="text" id="chuoi"></input>
+	    <button type="button" onclick="DemTu()" return false;>Đếm số từ</button>
+		<h1 id="tang"></h1>
+		<p id="loi"></p>
+	
+</body>
+</html>

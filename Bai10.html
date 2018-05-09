@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var ds = [];
+    var mang = '';
+    var nhap='';
+    function SapXep(){
+        for(var i=0; i<ds.length-1;i++){
+            ds.sort();
+        }
+    }
+    function Xuat() {
+        mang = document.getElementById("name").value.toString();
+        ds = mang.split(' ');
+        SapXep();
+        document.getElementById("k").innerHTML = ds.toString();
+        document.getElementById("nhapmang").innerHTML = 'Nhap so';
+        nhap = document.createElement("input");
+        nhap.setAttribute("type", "text");
+        document.body.appendChild(nhap);
+        var btn = document.createElement("button");
+        var ch = document.createTextNode("Kích chèn");
+        btn.onclick = function() {Chen()};
+        btn.appendChild(ch);
+        document.body.appendChild(btn);
+        document.getElementById("k").innerHTML = ds.toString();
+    }
+    function Chen() {
+        var S = nhap.value;
+        if (S >=ds[ds.length - 1]) {
+            ds.push(S);
+        }
+        else {
+            ds.push(S);
+            ss();
+        }
+        document.getElementById("k").innerHTML = ds.toString();
+    }
+	</script>
+</head>
+<body>
+		<label>Nhập vào chuỗi</label><br>
+	    <input type="text" id="name"></input>
+	    <button type="button" onclick="Xuat()">Chèn</button>
+	    <h1 id="k"></h1>
+	    <p id="nhapmang"></p>
+</body>
+</html>

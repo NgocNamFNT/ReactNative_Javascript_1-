@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	function CheckSo() {
+        var so=document.getElementById("so").value.toString();
+        var mang=so.split(' ');
+        var dem;
+        var check=[];
+        for (var i=0;i<mang.length();i++)
+            check[i] = false;
+        for(var i=0;i<mang.length();i++)
+         if (!check[i])
+          {
+            dem=1;
+            for(var j=0;j<mang.length();j++)
+                if(mang[i]==mang[j] && i!=j) {
+                    dem++;
+                    check[j]=1;
+                }
+            if (dem == 2)
+                check.push(mang[i]);
+          }
+    	document.getElementById("tang").innerHTML="Số xuất hiện một lần:"+check.toString();
+    }
+	</script>
+</head>
+<body>
+		<label>Nhập vào dãy số</label><br>
+		<input type="text" id="so"></input>
+	    <button type="button" onclick="CheckSo()" return false;>Input</button>
+		<h1 id="tang"></h1>
+		<p id="loi"></p>
+</body>
+</html>

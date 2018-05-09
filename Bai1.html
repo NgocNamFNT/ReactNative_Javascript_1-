@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="Bai1.js">
+		function DaoChuoi() {
+    var hoten = document.getElementById("name").value;
+    if(hoten==""){
+    	document.getElementById("loi").innerHTML="Họ tên không được để chống";
+    }
+    else{
+    	document.getElementById("loi").innerHTML="";
+    }
+    var mang = hoten.split(' ');
+    for (var i = 0; i < mang.length; i++){
+       var tendoi =  `${mang[2]} ${mang[0]} ${mang[1]}`
+    document.getElementById("dao").innerHTML = tendoi.toString();
+	}
+}
+	</script>
+</head>
+<body>
+	<h1 align="center">Bài tập Javascript</h1>
+	<h2>Bài tập số 1</h2>
+		<label>Nhập vào một chuỗi</label><br>
+		<input type="text" id="name"></input>
+	    <button type="button" onclick="DaoChuoi()" return false;>Đảo</button>
+	    <h1 id="dao"></h1>
+	    <p id="loi"></p>
+	
+
+
+
+	
+</body>
+</html>
